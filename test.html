@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Debounce Function Test</title>
+        <script src="./debounce.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const exampleFunction = function () {
+                    console.log('Button clicked!');
+                };
+
+                const { debounced } = debounce(exampleFunction, 1000, true);
+
+                document.getElementById('testButton').addEventListener('click', function () {
+                    debounced();
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <button id="testButton">Click Me</button>
+    </body>
+</html>
